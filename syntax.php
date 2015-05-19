@@ -96,6 +96,8 @@ class syntax_plugin_pagequery extends DokuWiki_Syntax_Plugin {
         foreach ($params as $param) {
             list($option, $value) = $this->_keyvalue($param, '=');
             switch ($option) {
+            	case 'http-request':
+            		$opt['query'] = $_REQUEST['pagequery'];
                 case 'casesort':
 				case 'fullregex':
                 case 'fulltext':
