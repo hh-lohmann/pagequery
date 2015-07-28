@@ -250,6 +250,10 @@ class syntax_plugin_pagequery extends DokuWiki_Syntax_Plugin {
         $pq = new PageQuery($lang);
 
         $query = $opt['query'];
+        global $INPUT;
+        if ($INPUT->has('pagequery')) {
+          $query = $INPUT->str('pagequery') ;
+        }
 
         if ($mode == 'xhtml') {
 
